@@ -17,12 +17,13 @@ private:
 	void processEvents();
 	void update(sf::Time elapsedTime);
 	void render();
-
 	void updateStats(sf::Time elapsedTime);
 	
 private:
 	static const sf::Time TimePerFrame;
+
 	sf::RenderWindow mWindow;
+
 	sf::Font mFont;
 	sf::Text mStatText;
 	sf::Time mStatUpdateTime;
