@@ -5,7 +5,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 
 class Game : private sf::NonCopyable
-{  
+{
 public:
 	Game();
 	void run();
