@@ -4,8 +4,15 @@ const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
 : mWindow(sf::VideoMode(640, 480), "SFML SNAKE")
+, mFont()
+, mStatText()
+, mStatUpdateTime()
+, mStatNumFrames(0)
 {
-
+	mFont.loadFromFile("Media/Sansation.ttf");
+	mStatText.setFont(mFont);
+	mStatText.setPosition(5.f, 5.f);
+	mStatText.setCharacterSize(10);
 }
 
 void Game::run()
@@ -24,6 +31,7 @@ void Game::run()
 			update(TimePerFrame);
 		}
 
+		updateStats(elapsedTime);
 		render();
 	}
 }
@@ -46,6 +54,23 @@ void Game::update(sf::Time elapsedTime)
 void Game::render() 
 {
 	mWindow.clear();
+	mWindow.draw(mStatText);
 	mWindow.display();
+}
+
+void Game::updateStats(sf::Time elapsedTime)
+{
+	mStatUpdateTime += elapsedTime;
+	mStatNumFrames += 1;
+
+	if (mStatUpdateTime >= sf::seconds(1.0f))
+	{
+		mStatText.setString(
+			"Frames / Second = " + std::to_string(mStatNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatUpdateTime.asMicroseconds() / mStatNumFrames) + "us");
+
+		mStatUpdateTime -= sf::seconds(1.0f);
+		mStatNumFrames = 0;
+	}
 }
 
