@@ -3,6 +3,7 @@
 
 #include <SFML/System/Time.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Window/Event.hpp>
 
 class Game : private sf::NonCopyable
 {
