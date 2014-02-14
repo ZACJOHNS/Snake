@@ -5,8 +5,11 @@ using namespace std;
 
 Button::Button()
 : mIsClicked(false)
+<<<<<<< HEAD
 , mFont()
 , mText()
+=======
+>>>>>>> Game_Screen
 {
 	mFont.loadFromFile("Media/Minecraftia.ttf");
 	mButtonShape.setFillColor(sf::Color::Green);
@@ -14,8 +17,14 @@ Button::Button()
 
 void Button::setString(std::string buttonText)
 {
+<<<<<<< HEAD
 	mText.setString(buttonText);
 	mText.setFont(mFont);
+=======
+
+	mText.setFont(mFont);
+	mText.setString(buttonText);
+>>>>>>> Game_Screen
 	mText.setCharacterSize(30);
 	mText.setColor(sf::Color::Black);
 	mText.setPosition(mButtonShape.getPosition().x, mButtonShape.getPosition().y);
@@ -33,6 +42,11 @@ void Button::setSize(sf::Vector2f size)
 
 void Button::handleInput(sf::RenderWindow& window)
 {
+<<<<<<< HEAD
+=======
+
+	
+>>>>>>> Game_Screen
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 	{
 		/// get the mouse coordinates relative to the render window
@@ -44,7 +58,10 @@ void Button::handleInput(sf::RenderWindow& window)
 		    mousePosition.y >= buttonPosition.y &&
 		    mousePosition.y <= buttonPosition.y + mButtonShape.getSize().y)
 		{
+<<<<<<< HEAD
 			cout << "BUtton clicked" << endl;
+=======
+>>>>>>> Game_Screen
 			mIsClicked = true;
 		}
 	}

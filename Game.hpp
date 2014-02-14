@@ -22,15 +22,24 @@ private:
 	void update(sf::Time elapsedTime);
 	void render();
 	void updateStats(sf::Time elapsedTime);
+	void handleInput();
+
+public:
 
 public:
 	static const sf::Time TimePerFrame;
 	static const int ScreenWidth;
 	static const int ScreenHeight;
+<<<<<<< HEAD
 	static std::shared_ptr<Screen> Screen;
+=======
+	static std::shared_ptr<Screen> mScreen;
+	
+>>>>>>> Game_Screen
 	
 private:
 	sf::RenderWindow mWindow;
+	
 
 	sf::Font mFont;
 	sf::Text mStatText;
