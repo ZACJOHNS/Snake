@@ -1,5 +1,5 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef GAME_HPP
+#define GAME_HPP
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
@@ -27,6 +27,7 @@ public:
 	static const sf::Time TimePerFrame;
 	static const int ScreenWidth;
 	static const int ScreenHeight;
+	static std::shared_ptr<Screen> Screen;
 	
 private:
 	sf::RenderWindow mWindow;
@@ -35,8 +36,6 @@ private:
 	sf::Text mStatText;
 	sf::Time mStatUpdateTime;
 	std::size_t	mStatNumFrames;
-
-	std::shared_ptr<Screen> mScreen;
 };
 
 #endif

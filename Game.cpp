@@ -3,10 +3,10 @@
 const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 const int Game::ScreenWidth = 640;
 const int Game::ScreenHeight = 480;
+std::shared_ptr<Screen> Game::Screen = std::make_shared<MenuScreen>();
 
 Game::Game()
 : mWindow(sf::VideoMode(Game::ScreenWidth, Game::ScreenHeight), "SFML SNAKE")
-, mScreen(std::make_shared<MenuScreen>())
 , mFont()
 , mStatText()
 , mStatUpdateTime()
@@ -41,6 +41,8 @@ void Game::run()
 
 void Game::processEvents()
 {
+	mScreen->handleInput(mWindow);
+
 	sf::Event event;
 	while (mWindow.pollEvent(event))
 	{
