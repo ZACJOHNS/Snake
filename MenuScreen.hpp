@@ -1,10 +1,14 @@
-#ifndef MENUSCREEN_H
-#define MENUSCREEN_H
+#ifndef MENUSCREEN_HPP
+#define MENUSCREEN_HPP
 
 #include "Screen.hpp"
 
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Text.hpp>
+
+#include "Game.hpp"
+#include "Button.hpp"
+#include "GameScreen.hpp"
 
 class MenuScreen : public Screen
 {
@@ -15,8 +19,15 @@ public:
 	void render(sf::RenderWindow& window);
 
 private:
+	void createScreen();
+	void createMenu();
+
+private:
 	sf::Font mFont;
 	sf::Text mTitle;
+
+	Button startButton;
+	Button exitButton;
 };
 
 #endif

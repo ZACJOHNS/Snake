@@ -1,5 +1,5 @@
-#ifndef SCREEN_H
-#define SCREEN_H
+#ifndef SCREEN_HPP
+#define SCREEN_HPP
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
