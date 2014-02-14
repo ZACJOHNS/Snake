@@ -8,10 +8,7 @@
 
 #include "Game.hpp"
 #include "Button.hpp"
-<<<<<<< HEAD
-=======
 #include "GameScreen.hpp"
->>>>>>> Game_Screen
 
 class MenuScreen : public Screen
 {
